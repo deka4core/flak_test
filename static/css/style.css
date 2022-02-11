@@ -1,5 +1,4 @@
 h1, h4 {left top no-repeat; text-align: center; color:black;}
-img {max-width: 40%;}
 form.login_form {
     margin-left: auto;
     margin-right: auto;
@@ -12,3 +11,9 @@ form.login_form {
 form.photo_form {max-width: 450px;
     background-color: #9999CC;
     border-radius: 5px;}
+
+div.carousel-item img{ max-height: 500px;
+    align: center;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;}
