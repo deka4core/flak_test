@@ -13,12 +13,7 @@ def mission_slogan():
     return "И на Марсе будут яблони цвести!"
 
 
-def promotion():
-    promotion_text = ["Человечество вырастает из детства.",
-                      "Человечеству мала одна планета.",
-                      "Мы сделаем обитаемыми безжизненные пока планеты.",
-                      "И начнем с Марса!",
-                      "Присоединяйся!"]
+def promotion(promotion_text):
     return ''.join(['<div class="alert alert-primary" role="alert">' + x + "</div>" for x in promotion_text])
 
 
@@ -41,7 +36,11 @@ def bootstrap():
                     <h1>Жди нас, Марс!</h1>
                     <img src="{url_for('static', filename='img/mars.png')}"
                       alt="здесь должна была быть картинка, но не нашлась">
-                    {promotion()}
+                    {promotion(["Человечество вырастает из детства.",
+                                "Человечеству мала одна планета.",
+                                "Мы сделаем обитаемыми безжизненные пока планеты.",
+                                "И начнем с Марса!",
+                                "Присоединяйся!"])}
                   </body>
                 </html>'''
 
@@ -167,6 +166,41 @@ def form_sample():
         print(request.form.get('file'))
         print(request.form.get('accept'))
         return "Форма отправлена"
+
+
+@app.route('/choice/<planet_name>')
+def planets_choice(planet_name):
+    mars_poem = [
+        "Марс пустынная планета", "Никого на Марсе нет.", "Не растут деревья тут", "И цветы холодным летом"
+        , "Не распустятся с рассветом.", "Очень мало здесь, воды,", "Но у полюса есть льды."]
+    venera_poem = ["Венера прекрасна! За тонкой вуалью",
+                   "Богиню любви различите едва ли!",
+                   "Закрыта она пеленой облаков.",
+                   "А что же под ними? Климат каков?",
+                   "Климат имеет огромный дефект.",
+                   "Причиной тому парниковый эффект.",
+                   "Газ ядовит в атмосфере Венеры.",
+                   "Дышать невозможно! Жарища без меры!",
+                   "Солнца не видно сквозь облака.",
+                   "Жизнь невозможна! Но, может, пока?"]
+    planets = {"Марс": mars_poem, "Венера": venera_poem}
+    return f'''<!doctype html>
+                   <html lang="en">
+                     <head>
+                       <meta charset="utf-8">
+                       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                       <link rel="stylesheet" 
+                       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" 
+                       integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" 
+                       crossorigin="anonymous">
+                       <link rel="stylesheet" type="text/css" href="{url_for('static', filename='css/style.css')}" />
+                       <title>Жди нас, {planet_name}!</title>
+                     </head>
+                     <body>
+                       <h1>Жди нас, {planet_name}!</h1>
+                       {promotion(planets[planet_name])}
+                     </body>
+                   </html>'''
 
 
 if __name__ == '__main__':
