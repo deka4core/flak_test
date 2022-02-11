@@ -9,3 +9,6 @@ form.login_form {
     border-radius: 5px;
     padding: 10px;
 }
+form.photo_form {max-width: 450px;
+    background-color: #9999CC;
+    border-radius: 5px;}
