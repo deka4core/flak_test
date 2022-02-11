@@ -1,2 +1,11 @@
-h1 {left top no-repeat; color:#FF0000;}
+h1, h4 {left top no-repeat; text-align: center; color:black;}
 img {max-width: 40%;}
+form.login_form {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 450px;
+    background-color: #9999CC;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 10px;
+}
