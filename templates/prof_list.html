@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% set professions = ["Космонавт",
+                   "Инженер-конструктор",
+                   "Инженер-робототехник",
+                   "Инженер по телекоммуникациям и связи",
+                   "Инженер-программист",
+                   "Космический баллистик",
+                   "Астроном",
+                   "Космический биолог",
+                   "Специалист по космической медицине"] %}
+{% if list == 'ol' %}
+    <ol>
+        {% for prof in professions %}
+        <li>{{ prof }}</li>
+        {% endfor %}
+    </ol>
+{% else %}
+    <ul>
+        {% for prof in professions %}
+            <li>{{ prof }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% endblock %}
