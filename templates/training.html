@@ -7,7 +7,6 @@
                     href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
                     integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
                     crossorigin="anonymous">
-    <title>{{ title }}</title>
     </head>
     <body>
         <div>
@@ -18,5 +17,16 @@
             </nav>
             <h4>И на Марсе будут яблони цвести!</h4>
         </div>
+        {% if ("инженер" in prof) or ("строитель" in prof) %}
+            <div class="col-md-8 offset-md-2">
+                <h1>Инженерные тренажеры</h1>
+                <img width="300" height="200" src="../static/img/engineer.png">
+            </div>
+        {% else %}
+            <div class="col-md-8 offset-md-2">
+                <h1>Научные симуляторы </h1>
+                <img width="300" height="200" src="../static/img/medic.png">
+            </div>
+         {% endif %}
     </body>
 </html>
