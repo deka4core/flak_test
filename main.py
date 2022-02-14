@@ -20,5 +20,11 @@ def prof_list(list):
     return render_template('prof_list.html', list=list)
 
 
+@app.route('/answer')
+@app.route('/auto_answer')
+def auto_answer():
+    return render_template('auto_answer.html')
+
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')

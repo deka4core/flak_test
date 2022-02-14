@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+    {% set args = {'title': 'И на марсе будут яблони цвести!', 'surname': 'Watny', 'name': 'Mark',
+    'education': 'выше среднего', 'profession': 'штурман марсохода', 'sex': 'male',
+    'motivation': 'Всегда мечтал застрять на Марсе!', 'ready': True}%}
+    <div class="answer_content">
+        <h4>{{ args['title'] }}</h4>
+        <div>Фамилия: {{ args['surname'] }}</div>
+        <div>Имя: {{ args['name'] }}</div>
+        <div>Образование: {{ args['education'] }}</div>
+        <div>Профессия: {{ args['profession'] }}</div>
+        <div>Пол: {{ args['sex'] }}</div>
+        <div>Мотивация: {{ args['motivation'] }}</div>
+        <div>Готовы остаться на Марсе?: {{ args['ready'] }}</div>
+    </div>
+
+{% endblock %}
