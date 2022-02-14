@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    {% set caute = 'Каюта № '%}
+<div class="answer_content">
+    <h1>Размещение по каютам</h1>
+    {% for user in astronauts %}
+        <ol>{{ user }} - {{ caute }}{{ loop.index }}{% if loop.first %} - капитан корабля{% endif %}
+        </ol>
+        {% endfor %}
+    </div>
+
+{% endblock %}
