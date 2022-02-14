@@ -1,6 +1,7 @@
 h1 {left top no-repeat; text-align: center; color:black;}
 main.container h4 { margin-left: 0px; color: grey}
-main.container {margin-left: 0px;}
+main.container h1 { text-align: left; color: black}
+main.container img { margin: 5px}
 main.container div {padding-left: 20px}
 form.login_form {
     margin-left: auto;
